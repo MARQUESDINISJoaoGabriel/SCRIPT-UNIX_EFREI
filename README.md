@@ -16,20 +16,8 @@ Nous sommes engagés à contribuer à la communauté open-source en développant
 
 <hr>
 
-## Aperçu du projet
 
-Nom du Projet est un outil conçu pour Linux qui [décrivez brièvement ce que fait le projet]. Notre objectif avec ce projet est de [indiquez le problème que le projet résout ou son but]. Que vous soyez un utilisateur Linux expérimenté ou débutant, cet outil vous permettra de [soulevez les fonctionnalités principales ou les avantages].
-
-## Installation
-
-Pour commencer <strong> Nom du Projet </strong>, suivez ces étapes:
-
-### Prérequis :
-
-<li> Distribution Linux : Ubuntu, Fedora, Debian </li>
-<li> [Autres dépendances comme Git, bibliothèques spécifiques, etc.] </li>
-
-### Cloner le depôt
+### Dépôt git
 
 ```bash
 git clone git@github.com:MARQUESDINISJoaoGabriel/SCRIPT-UNIX_EFREI.git
