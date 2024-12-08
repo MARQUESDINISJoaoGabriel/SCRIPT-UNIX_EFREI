@@ -19,7 +19,8 @@ if [ "$reponse" -eq '3' ]; then
 	nmap -p "$ip" ;
 fi
 if [ "$reponse" -eq '4' ]; then
-	read -p "Entrez les adresses IP (séparées par des virgules) : " ip
+	echo "Entrez les adresses IP (séparées par des virgules) : " ;
+        read ip ; 
 	IFS=',' read -r -a ip_list <<< "$ip" 
     for host in "${ip_list[@]}"; do
       nmap -p $ip
