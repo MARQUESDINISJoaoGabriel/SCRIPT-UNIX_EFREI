@@ -1,3 +1,4 @@
+#!/bin/bash
 echo "Choississez un scan parmis les suivant :
 	Scan simple : 1 ,
 	scan complet : 2 ,
