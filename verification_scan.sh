@@ -13,7 +13,11 @@ if [ "$reponse" -eq '2' ]; then
 	nmap -p 1-65535 ; 
 fi	
 if [ "$reponse" -eq '3' ]; then
-	echo " veuilez donnez l'ip à analyser " ;
+	echo " veuilez donnez l'ip ou les ip's à analyser " ;
 	read ip ;
-	nmap -p "$ip" ;
+	IFS=',' read -r -a ip_list <<< "$ip"
+    for host in "${ip_list[@]}"; do
+      nmap -v $host
+    done
 fi
+    
