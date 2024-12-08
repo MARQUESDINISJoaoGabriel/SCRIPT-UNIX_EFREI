@@ -20,9 +20,9 @@ if [ "$reponse" -eq '3' ]; then
 fi
 if [ "$reponse" -eq '4' ]; then
 	read -p "Entrez les adresses IP (séparées par des virgules) : " ips
-	IFS=',' read -r -a ip_list <<< "$ips" 
-        for ip in "${ip_list[@]}"; do
-      		nmap -p $ip
+	IFS=',' read -r -a ip_array <<< "$ips"  ;
+        for ip in "${ip_array[@]}"; do
+      		nmap -p "$ip"
         done
     	;;
   	*)
