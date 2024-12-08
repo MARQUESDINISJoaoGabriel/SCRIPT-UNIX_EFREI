@@ -22,7 +22,7 @@ if [ "$reponse" -eq '4' ]; then
 	echo "Entrez les adresses IP (séparées par des virgules) : " ;
         read ip ; 
 	IFS=',' read -r -a ip_list <<< "$ip" 
-    for host in "${ip_list[@]}"; do
+    for ip in "${ip_list[@]}"; do
       nmap -p $ip
     done
 
