@@ -12,14 +12,18 @@ if [ "$reponse" -eq '1' ]; then
 fi	
 if [ "$reponse" -eq '2' ]; then 
 	nmap -p 1-65535 ; 
-fi	
+fi
 if [ "$reponse" -eq '3' ]; then
+	echo " veuilez donnez l'ip à analyser " ;
+	read ip ;
+	nmap -p "$ip" ;
+fi
+if [ "$reponse" -eq '4' ]; then
 	read -p "Entrez les adresses IP (séparées par des virgules) : " ip
 	IFS=',' read -r -a ip_list <<< "$ip" 
     for host in "${ip_list[@]}"; do
       nmap -v $ip
     done
-if ["reponse" -eq '4']; then 
 
 fi
     
