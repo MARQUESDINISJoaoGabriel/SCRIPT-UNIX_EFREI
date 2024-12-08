@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 echo "Choississez un scan parmis les suivant :
 	Scan simple : 1 ,
 	scan complet : 2 ,
@@ -26,9 +26,8 @@ if [ "$reponse" -eq '4' ]; then
       		nmap -p "$ip"
         done
     	;;
-  	*)
+*)
     echo "Une erreur est survenue."
     ;;
-esac
 fi
     
