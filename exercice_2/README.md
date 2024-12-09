@@ -19,13 +19,35 @@ détecter l'OS (fingerprinting). </li>
 
 <li> Le script peut exécuter les deux types de scan ou juste un seul, selon les options passées en argument. </li>
 
-## Utilisation du script
+## Prérequis
+
+### 1. Vérifier que vous avez déjà installer les packages du README Global
+
+### 2. Configurer le script
+
+Si vous avez une erreur lié au format Windows, exécutez:
+
+```bash
+dos2unix scan.sh
+```
+
+```bash
+chmod u+x scan.sh
+```
+
+## Exécution du script
 
 <li> Pour scanner uniquement les actifs :</li>
 
 ```bash
-./scan.sh 192.168.1.1 --service-detection
+./scan.sh 192.168.1.1 
 ```
+<li> Pour détecter le système d'exploitation uniquement : </li>
+
+```bash
+./scan.sh 192.168.1.1 --os-detection
+```
+
 <li> Pour détecter le système d'exploitation uniquement : </li>
 
 ```bash
