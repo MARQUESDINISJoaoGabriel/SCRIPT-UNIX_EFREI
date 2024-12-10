@@ -3,13 +3,13 @@
 # Function to display the menu
 function display_menu {
     echo "==============================="
-    echo "       Nmap Scanner Tool       "
+    echo "       Outil de Scanner Nmap       "
     echo "==============================="
-    echo "1) Enter IP address"
-    echo "2) Perform OS detection scan"
-    echo "3) Perform service detection scan"
-    echo "4) Perform both scans"
-    echo "5) Exit"
+    echo "1) Entrer une adresse IP"
+    echo "2) Effectuer une detection de syst me d'exploitation"
+    echo "3) Effectuer une detection des services"
+    echo "4) Effectuer les deux analyses"
+    echo "5) Quitter"
     echo "==============================="
 }
 
@@ -17,54 +17,55 @@ function display_menu {
 function scan_services {
     echo "[INFO] Scanning services on host $TARGET..."
     nmap -Pn -sV "$TARGET"
-    echo "[INFO] Operation completed."
+    echo "[INFO] Operation terminee."
 }
 
 # Function to perform OS scan
 function scan_os {
     echo "[INFO] Scanning OS on host $TARGET..."
     nmap -Pn -O "$TARGET"
-    echo "[INFO] Operation completed."
+    echo "[INFO] Operation terminee."
 }
 
 # Main interactive loop
 TARGET=""
 while true; do
     display_menu
-    read -p "Choose an option: " choice
+    read -p "Choisissez une option: " choice
 
     case $choice in
         1)
-            read -p "Enter the target IP address: " TARGET
+            read -p "Entrez l'adresse IP cible: " TARGET
             ;;
         2)
             if [ -z "$TARGET" ]; then
-                echo "[ERROR] No target IP address provided. Please select option 1 first."
+                echo "[ERREUR] Aucune adresse IP cible fournie. Veuillez choisir l'option 1 d'abord."
             else
                 scan_os
             fi
             ;;
         3)
             if [ -z "$TARGET" ]; then
-                echo "[ERROR] No target IP address provided. Please select option 1 first."
+                echo "[ERREUR] Aucune adresse IP cible fournie. Veuillez choisir l'option 1 d'abord."
             else
                 scan_services
             fi
             ;;
         4)
             if [ -z "$TARGET" ]; then
-                echo "[ERROR] No target IP address provided. Please select option 1 first."
+                echo "[ERREUR] Aucune adresse IP cible fournie. Veuillez choisir l'option 1 d'abord."
             else
                 scan_os
                 scan_services
             fi
             ;;
         5)
-            echo "[INFO] Exiting the program. Goodbye!"
+            echo "[INFO] Quitter le programme. Au revoir!"
             exit 0
             ;;
         *)
-            echo "[ERROR] Invalid choice. Please try again."
+            echo "[ERREUR] Choix invalide. Veuillez ressayer."
             ;;
     esac
 done
+
