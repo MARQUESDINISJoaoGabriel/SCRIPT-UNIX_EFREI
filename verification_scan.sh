@@ -19,15 +19,15 @@ if [ "$reponse" -eq '3' ]; then
 	read ip ;
 	nmap -p "$ip" ;
 fi
-if [ "$reponse" -eq '4' ]; then
-	read -p "Entrez les adresses IP (séparées par des virgules) : " ips
-	IFS=',' read -r -a ip_array <<< "$ips"  
-        for ip in "${ip_array[@]}"; do
-      		nmap -p "$ip"
-        done
-    	;;
-*)
-    echo "Une erreur est survenue."
-    ;;
-fi
+#if [ "$reponse" -eq '4' ]; then
+#	read -p "Entrez les adresses IP (séparées par des virgules) : " ips
+#	IFS=',' read -r -a ip_array <<< "$ips"  
+#        for ip in "${ip_array[@]}"; do
+#     		nmap -p "$ip"
+#        done
+#    	;;
+#*)
+#    echo "Une erreur est survenue."
+#    ;;
+#fi
     
