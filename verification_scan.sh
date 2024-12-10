@@ -12,7 +12,7 @@ if [ "$reponse" -eq '1' ]; then
 	nmap -sp "$ip_all" ; 
 fi	
 if [ "$reponse" -eq '2' ]; then 
-	nmap -p 1-65535 ; 
+	nmap -p- ; 
 fi
 if [ "$reponse" -eq '3' ]; then
 	echo " veuilez donnez l'ip à analyser " ;
